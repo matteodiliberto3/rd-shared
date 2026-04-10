@@ -20,7 +20,12 @@ export const ValidateQrSchema = z.object({
     token: z.string().min(1),
 });
 
+export const InvalidateBookingSchema = z.object({
+    bookingId: z.number().int().positive(),
+});
+
 export type CreatePaymentIntentInput = z.infer<typeof CreatePaymentIntentSchema>;
 export type ProcessProprietaryPaymentInput = z.infer<typeof ProcessProprietaryPaymentSchema>;
 export type GenerateQrInput = z.infer<typeof GenerateQrSchema>;
 export type ValidateQrInput = z.infer<typeof ValidateQrSchema>;
+export type InvalidateBookingInput = z.infer<typeof InvalidateBookingSchema>;
